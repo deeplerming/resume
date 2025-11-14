@@ -7,15 +7,15 @@
 %\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
+\usepackage{hyperref}
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{汪星鹏}
-
+\name{汪星鹏} 
 % {E-mail}{mobilephone}{homepage}
 % be careful of _ in emaill address
-\contactInfo{(+86) 18455656782}{22332102@zju.edu.cn}{}{GitHub @deeplerming}
+\contactInfo{(+86) 18455656782}{22332102@zju.edu.cn}{}{\href{https://github.com/deeplerming}{GitHub @deeplerming}}
 % {E-mail}{mobilephone}
 % keep the last empty braces!
 %\contactInfo{xxx@yuanbin.me}{(+86) 131-221-87xxx}{}
@@ -32,25 +32,34 @@
 
 \section{科研经历}
 \begin{itemize}
-	\item {\textbf{基于环境感知的空地两栖机器人鲁棒定位系统}}\hfill {2023--2024}
-	\begin{itemize} 
-		\item {提出了一种专门为基于被动轮的设计的环境感知鲁棒定位系统，该系统具有两个被动轮和一个标准四旋翼飞行器。该定位系统紧密集成了来自多个传感器的数据，包括摄像头、惯性测量单元 (IMU)、编码器和单点激光距离传感器。}
-		\item {提出了一种异常感知方法，可以感知异常传感器并相应地动态调整优化权重。通过明确估计环境条件，例如地面地形坡度和视觉信息质量，机器人可以在地面上获得准确且鲁棒的定位结果。}
-		\item {为了评估我们的工作，我们收集了各种环境下的 15 个数据集，包括平坦地形、不平坦地形、不同运动模式、相机遮挡以及起飞和着陆期间，在各种具有挑战性的场景中进行了广泛的实验，证明了我们的系统在实际应用中的有效性和可靠性。}
-	\end{itemize}
-	\item {\textbf{基于SLAM系统的Tof相机深度补全}} \hfill {2023--2025} 
-	\begin{itemize}
-		\item {Time-of-Flight (ToF)相机因其轻量性和高精度而被广泛用于机器人任务，然而其深度视距受限问题使其目前只适合小型室内场景。本工作旨在通过深度补全扩展ToF相机的深度范围，以提升其在大规模室内外场景的下游任务表现。}
-		\item {在移动重建而非传统静止累积的范式下，构建了首个基于激光三维重建的大规模场景ToF深度补全数据集及基准测试，在深度范围/填充密度/采集效率等方面相较现有数据集具有显著优势。通过引入新型3D分支设计，3D-2D联合传播池化模块，和多模态跨协方差注意力，设计了针对性的深度补全网络架构。该架构可进一步利用RGB-ToF序列的视觉SLAM跟踪点云，获取远近一致引导深度，以提高深度补全质量。对模型进行轻量化适配，使其直接在无人机机载电脑实时运行，有效助力建图与自主规划等机器人下游任务。}
-		\item {定量实验结果展示了相较于现有SOTA深度补全方法的卓越精度（平均绝对误差降低8.2\%以上），实现将ToF相机的有效视距拓展到数倍乃至数十几倍。两项实机下游任务实验证明，所提出方法显著提高了无人机建图任务的效率和地图完整性，提升了无人机规划器的安全性与轨迹最优性。}
-	\end{itemize}
-	\item {\textbf{不依赖固定GNSS基站的多机器人高精度集群定位系统}} \hfill {2024--至今}
-	\begin{itemize}
-		\item {传统GNSS受限环境下定位精度下降，高精度定位依赖固定基站或网络基站，通过SLAM系统解除基站固定的限制从而实现多机器人协同定位算法，同时保证鲁棒性与固定基站RTK的厘米级精度。}
-		\item 
-	\end{itemize}
-	\end{itemize}
+	\item {\textbf{基于环境感知的空地两栖机器人鲁棒定位系统}}
+		{\href{https://www.bilibili.com/video/BV1N4QnYqEUL/?share_source=copy_web&vd_source=8a04d759aa7f8bf8916bafb4dae034f6}{视频}}
+		{\href{https://ieeexplore.ieee.org/document/11128310}{论文}}
+		\hfill {2023--2024}
+		\begin{itemize} 
+			\item {提出了一种专门为基于轮速计设计的环境感知鲁棒定位系统。该定位系统紧耦合了来自包括摄像头、惯性测量单元 (IMU)、编码器和单点激光距离传感器的数据。}
+			\item {提出了一种异常感知方法，可以感知异常传感器并相应地动态调整优化权重。通过明确估计环境条件，例如地面地形坡度和视觉信息质量，机器人可以在地面上获得准确且鲁棒的定位结果。}
+			\item {收集了各种环境下的 15 个数据集，证明了我们的系统在实际应用中的有效性和可靠性。}
+		\end{itemize}
 
+	\vspace{0.5em}
+
+	\item {\textbf{基于SLAM系统的Tof相机深度补全}} \hfill {2024--2025} 
+		\begin{itemize}
+			\item {Time-of-Flight (ToF)相机深度视距受限问题使其目前只适合小型室内场景。通过深度补全扩展ToF相机的深度范围，以提升其在大规模室内外场景的下游任务表现。}
+			\item {在移动重建而非传统静止累积的范式下，构建了首个基于激光三维重建的大规模场景ToF深度补全数据集及基准测试。设计了针对性的深度补全网络架构，以提高深度补全质量。}
+			\item {定量实验结果实现将ToF相机的有效视距拓展到数倍乃至数十几倍。}
+		\end{itemize}
+
+	\vspace{0.5em}
+
+	\item {\textbf{不依赖固定GNSS基站的多机器人高精度集群定位系统}} \hfill {2024--至今}
+		\begin{itemize}
+			\item {提出了一种不依赖固定基站的多机器人高精度集群定位系统。通过SLAM系统解除基站固定的限制，从而实现多机器人协同定位算法，同时保证鲁棒性与固定基站RTK的厘米级精度。}
+			\item {设计了一种基于图优化的多传感器融合框架，将GNSS伪距、载波相位观测值与LiDAR里程计、IMU预积分观测值进行紧耦合优化，实现高精度、低漂移的状态估计。}
+			\item {通过在多种复杂环境下进行实机测试，验证了所提出方法在多机器人协同定位中的有效性和鲁棒性，显著提升了集群的导航性能。}
+		\end{itemize}
+\end{itemize}
 % \section{\faCogs\ IT 技能}
 
 
@@ -71,12 +80,6 @@
 	\item {通过在多种复杂环境下进行实机测试，验证了该定位器在林业测绘中的有效性和鲁棒性，在尽量减少占用计算资源的前提下提高了系统的定位精度。}
 \end{itemize}
 
-\datedsubsection{\textbf{利用无人机第三视角简化履带车控制}}{2025.10-至今}
-\begin{itemize}
-  \item \textbf{利用海量用户定位数据，对城市空间及人群移动特征进行研究。}第一个课题是基于香农熵和人群出行模式，构建城市网格与用户矩阵分析城市多样性/流动性分布；可视分析平台前端与可视化基于D3/Vue/Express开发，数据分析与存储采用Python/MySQL/MongoDB技术，为了均衡大数据情况下的页面可视化渲染消耗用canvas替代svg。第二个课题是对海量商场定位数据做人群分类与可视化查询，依据该系统撰写的论文被CIKM 2016(DAVA Workshop)录用，并收录于中科院软件所年会成果集
-  \item 负责数据科学部HQ LAB的可视化原型开发，主导 TalkingMind 平台系统设计与前端开发
-\end{itemize}
-
 % \begin{onehalfspacing}
 % \end{onehalfspacing}
 
@@ -95,19 +98,20 @@
 % increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.2ex]
 %   \item LeetCodeOJ Solutions, \textit{https://github.com/hijiangtao/LeetCodeOJ}
-  \item {He W, \textbf{Wang X}, Wang P, et al. EAR-SLAM: Environment-Aware Robust Localization System for Terrestrial-Aerial Bimodal Vehicles}, ICRA2025
+  \item {He W, \textbf{Wang X}, Wang P, et al. EAR-SLAM: Environment-Aware Robust Localization System for Terrestrial-Aerial Bimodal Vehicles} 
+  \hfill{ICRA2025}
 %   \item 中国机器人大赛暨Robocup公开赛(武术擂台赛)全国一等奖,2013年10月
-  \item {Juncheng Chen, Tiancheng Lai, \textbf{Xingpeng Wang}, Bingxin Liao, Baozhe Zhang, Chao Xu*, and Yanjun Cao* ToFormer: Large-Scale Scenario Depth Completion for Time-of-Flight Camera},	T-ASE在投
-%   \item 电视节目"爸爸去哪儿"可视化分析展示, \textit{https://hijiangtao.github.io/variety-show-hot-spot-vis/}
+  \item {Juncheng Chen, Tiancheng Lai, \textbf{Xingpeng Wang}, Bingxin Liao, Baozhe Zhang, Chao Xu*, and Yanjun Cao* ToFormer: Large-Scale Scenario Depth Completion for Time-of-Flight Camera}	
+  \hfill{T-ASE在投}
 \end{itemize}
 
-\section{技术能力}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.2ex]
-  \item \textbf{编程语言}: JavaScript (ECMAScript, Node.js), HTML/CSS, Python, Go, SQL, C, Shell
-  \item \textbf{操作系统,数据库与工程构建}: Linux/macOS/MySQL/MongoDB/Git/webpack/Progressive Web App
-  \item \textbf{关键词}: React/Vue.js/D3.js(SVG)/three.js(canvas, WebGL)/chrome extension/Express
-\end{itemize}
+% \section{技术能力}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.2ex]
+%   \item \textbf{编程语言}: C, C++, Python, MATLAB, Docker, ROS/ROS2
+%   \item \textbf{操作系统,数据库与工程构建}: Linux/macOS/MySQL/MongoDB/Git/webpack/Progressive Web App
+%   \item \textbf{关键词}: React/Vue.js/D3.js(SVG)/three.js(canvas, WebGL)/chrome extension/Express
+% \end{itemize}
 
 % \section{\faHeartO\ 项目/作品摘要}
 % \section{项目/作品摘要}
