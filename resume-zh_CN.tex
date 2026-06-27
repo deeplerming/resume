@@ -16,14 +16,7 @@
 % {E-mail}{mobilephone}{homepage}
 % be careful of _ in emaill address
 \contactInfo{(+86) 18455656782}{22332102@zju.edu.cn}{}{\href{https://github.com/deeplerming}{GitHub @deeplerming}}
-% {E-mail}{mobilephone}
-% keep the last empty braces!
-%\contactInfo{xxx@yuanbin.me}{(+86) 131-221-87xxx}{}
- 
-% \section{个人总结}
-% 本人在校成绩优秀、乐观向上，工作负责、自我驱动力强、热爱尝试新事物，认同开放、连接、共享的Web在未来的不可替代性。在校期间长期从事可视分析(Web的2D/3D时空可视化)相关研究，对Web技术发展趋势及前端工程化解决方案有浓厚兴趣。\textbf{现任职于 BAT 集团。}
 
-% \section{\faGraduationCap\ 教育背景}
 \section{教育背景}
 \datedsubsection{\textbf{浙江大学},控制科学与工程学院,\textit{Fast-Lab 硕士研究生}}{2023.9 - 2026.6}
 \ {研究方向：SLAM GNSS等多传感器融合定位}
@@ -32,108 +25,66 @@
 
 \section{科研经历}
 \begin{itemize}
+	\item {\textbf{通过相对观测实现单频GNSS接收机的高精度定位}} \hfill {2025--2026}
+	\begin{itemize}
+		\item {提出了一种相对观测与单频GNSS测量的融合方法，使单频GNSS接收机能实现分米级定位。}
+		\item {通过引入多种低成本（轮速计）相对观测先验，对GNSS载波相位差分周跳进行有效检测和修复。}
+		\item {通过引入虚拟锚点约束，进一步减小了时间差分载波相位中的累计漂移，定位误差减少约50\%。}
+		\item {在多种复杂环境下进行实机测试，所提出方法可在GNSS失效2.5秒后仍保持分米级定位精度。}
+	\end{itemize}	
+	\item {\textbf{不依赖固定GNSS基站的多机器人高精度集群定位系统}} \hfill {2024--2025}
+	\begin{itemize}
+		\item {提出了一种不依赖固定基站的多机器人高精度集群定位系统，动基站上部署Mid-360激光雷达和一个单频接收机，移动站仅安装单频接收机，即可实现多机器人全局厘米级定位。}
+		\item {引入动基线载波相位差分模型以及周跳检测监督方案，接收机间相对位置估计精度达5cm以内。}
+	\end{itemize}
 	\item {\textbf{基于环境感知的空地两栖机器人鲁棒定位系统}}
-		{\href{https://www.bilibili.com/video/BV1N4QnYqEUL/?share_source=copy_web&vd_source=8a04d759aa7f8bf8916bafb4dae034f6}{视频}}
-		{\href{https://ieeexplore.ieee.org/document/11128310}{论文}}
-		\hfill {2023--2024}
-		\begin{itemize} 
-			\item {提出了一种专门为基于轮速计设计的环境感知鲁棒定位系统。该定位系统紧耦合了来自包括摄像头、惯性测量单元 (IMU)、编码器和单点激光距离传感器的数据。}
-			\item {提出了一种异常感知方法，可以感知异常传感器并相应地动态调整优化权重。通过明确估计环境条件，例如地面地形坡度和视觉信息质量，机器人可以在地面上获得准确且鲁棒的定位结果。}
-			\item {收集了各种环境下的 15 个数据集，证明了我们的系统在实际应用中的有效性和可靠性。}
-		\end{itemize}
+	{\href{https://www.bilibili.com/video/BV1N4QnYqEUL/?share_source=copy_web&vd_source=8a04d759aa7f8bf8916bafb4dae034f6}{视频}}
+	{\href{https://ieeexplore.ieee.org/document/11128310}{论文}}
+	\hfill {2023--2024}
+	\begin{itemize} 
+		\item {提出了一种专门为基于轮速计设计的环境感知鲁棒定位系统。该定位系统紧耦合了来自包括摄像头、惯性测量单元 (IMU)、编码器和单点激光距离传感器的数据。可实现厘米级定位精度。}
+		\item {提出了一种异常感知方法，可以感知异常传感器并相应地动态调整优化权重从而提高定位精度。}
+		\item {在包括斜坡，草地等各种环境下的 15 个数据集中进行了实机测试，验证了系统的稳定性。}
+	\end{itemize}
+	\item {\textbf{面向大场景的ToF相机深度补全}} \hfill {2024--2025} 
+	\begin{itemize}
+		\item {通过深度补全扩展ToF相机的深度范围至40m，以提升其在大规模室内外场景的下游任务表现。}
+		\item {在移动重建而非传统静止累积的范式下，构建了首个基于激光三维重建的ToF深度补全数据集。}
+		\item {在无人机实机实验中用Ego-Planner对算法进行了验证，证明了算法在实际应用中的可行性。}
+	\end{itemize}
 
 	\vspace{0.5em}
-
-	\item {\textbf{基于SLAM系统的Tof相机深度补全}} \hfill {2024--2025} 
-		\begin{itemize}
-			\item {Time-of-Flight (ToF)相机深度视距受限问题使其目前只适合小型室内场景。通过深度补全扩展ToF相机的深度范围，以提升其在大规模室内外场景的下游任务表现。}
-			\item {在移动重建而非传统静止累积的范式下，构建了首个基于激光三维重建的大规模场景ToF深度补全数据集及基准测试。设计了针对性的深度补全网络架构，以提高深度补全质量。}
-			\item {定量实验结果实现将ToF相机的有效视距拓展到数倍乃至数十几倍。}
-		\end{itemize}
-
-	\vspace{0.5em}
-
-	\item {\textbf{不依赖固定GNSS基站的多机器人高精度集群定位系统}} \hfill {2024--至今}
-		\begin{itemize}
-			\item {提出了一种不依赖固定基站的多机器人高精度集群定位系统。通过SLAM系统解除基站固定的限制，从而实现多机器人协同定位算法，同时保证鲁棒性与固定基站RTK的厘米级精度。}
-			\item {设计了一种基于图优化的多传感器融合框架，将GNSS伪距、载波相位观测值与LiDAR里程计、IMU预积分观测值进行紧耦合优化，实现高精度、低漂移的状态估计。}
-			\item {通过在多种复杂环境下进行实机测试，验证了所提出方法在多机器人协同定位中的有效性和鲁棒性，显著提升了集群的导航性能。}
-		\end{itemize}
 \end{itemize}
 % \section{\faCogs\ IT 技能}
-
-
 % \end{itemize}
 
 \section{项目经历}
 
-\datedsubsection{\textbf{紧耦合GNSS/LiDAR/IMU的智能车辆连续、无漂移状态估计器}}{2023-2024}
+\datedsubsection{\textbf{紧耦合GNSS/LiDAR/IMU的智能车辆连续、无漂移状态估计器}}{2023--2024}
 \begin{itemize}
-	\item {针对智能车辆在复杂环境下的连续定位时里程计的累计漂移问题，设计了一种紧耦合GNSS/LiDAR/IMU的状态估计器，通过GNSS原始数据观测，减少系统定位累计误差，同时定位精度达到厘米级。}
-	\item {设计了一种基于图优化的多传感器融合框架，将GNSS伪距、载波相位观测值与LiDAR里程计、IMU预积分观测值进行紧耦合优化，实现高精度、低漂移的状态估计。}
-	\item {通过在多种复杂环境下进行实车测试，验证了所提出方法在连续定位中的有效性和鲁棒性，显著提升了智能车辆的导航性能。}
+	\item {针对连续定位时里程计的累计漂移问题，将GNSS伪距、多普勒观测值与LiDAR点云配准残差、IMU积分结果加入到迭代误差卡尔曼滤波器中，实现高精度、低漂移的状态估计。}
+	\item {对GNSS接收机得到的卫星观测数据中的角度，信号强度等参数进行筛选和处理，以提高定位精度。}
+	\item {加入了室内外切换功能，使车辆能够在不同环境下自动切换定位策略，提高定位的连续性和稳定性。}
 \end{itemize}
-\datedsubsection{\textbf{林业测绘环境中的高精度回环定位系统}}{2023-2024}
+\datedsubsection{\textbf{林业测绘环境中的高精度回环定位系统}}{2023--2024}
 \begin{itemize}
-	\item {林业测绘过程中，由于树木的高度和密度变化较大，基于视觉或LiDAR的回环检测方法在该场景下表现不佳，设计了一种基于树木几何关系的高精度回环定位系统。}
+	\item {林业测绘过程中树木的高度和密度变化较大，设计了一种基于树木几何关系的高精度回环定位系统。}
 	\item {利用柱状特征确定局部地图中树的位置，再由稳定且能保证旋转不变性的三角描述子来锚定每一帧观测的树间几何关系，从而快速确定是否触发回环，约束状态估计。}
-	\item {通过在多种复杂环境下进行实机测试，验证了该定位器在林业测绘中的有效性和鲁棒性，在尽量减少占用计算资源的前提下提高了系统的定位精度。}
+	\item {在广西，重庆等多个林场进行了测绘实地测试，建图得到的林业畜牧量精度相比FAST-LIO提升30\%。}
 \end{itemize}
-
-% \begin{onehalfspacing}
-% \end{onehalfspacing}
-
-% \datedsubsection{\textbf{DID-ACTE} 荷兰莱顿}{2015年}
-% \role{本科毕业设计}{LIACS 交换生}
-% 利用结巴分词对中国古文进行分词与词性标注，用已有领域知识训练形成 classifier 并对结果进行调优
-% \begin{onehalfspacing}
-% \begin{itemize}
-%   \item 利用结巴分词对中国古文进行分词与词性标注
-%   \item 利用已有领域知识训练形成 classifier, 并用分词结果进行测试反馈
-%   \item 尝试不同规则，对 classifier 进行调优
-% \end{itemize}
-% \end{onehalfspacing}
 
 \section{论文与专利}
 % increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.2ex]
-%   \item LeetCodeOJ Solutions, \textit{https://github.com/hijiangtao/LeetCodeOJ}
   \item {He W, \textbf{Wang X}, Wang P, et al. EAR-SLAM: Environment-Aware Robust Localization System for Terrestrial-Aerial Bimodal Vehicles} 
   \hfill{ICRA2025}
-%   \item 中国机器人大赛暨Robocup公开赛(武术擂台赛)全国一等奖,2013年10月
   \item {Juncheng Chen, Tiancheng Lai, \textbf{Xingpeng Wang}, Bingxin Liao, Baozhe Zhang, Chao Xu*, and Yanjun Cao* ToFormer: Large-Scale Scenario Depth Completion for Time-of-Flight Camera}	
   \hfill{T-ASE在投}
+  \item {\textbf{Xingpeng Wang}, Ziwen Qu, Chao Xu, and Yanjun Cao* Empowering a Single-Frequency GNSS Receiver to Achieve High-Precision Positioning with Relative Observations}
+  \hfill{RA-L在投}
+  \item {Tiancheng Lai, Yuman Gao, Xiangyu Li, Ruitian Pang, \textbf{Xingpeng Wang}, and Yanjun Cao* Explore From Sketch: Accelerating UAV Exploration in Large-scale Environments with Prior Maps}
 \end{itemize}
 
-% \section{技术能力}
-% % increase linespacing [parsep=0.5ex]
-% \begin{itemize}[parsep=0.2ex]
-%   \item \textbf{编程语言}: C, C++, Python, MATLAB, Docker, ROS/ROS2
-%   \item \textbf{操作系统,数据库与工程构建}: Linux/macOS/MySQL/MongoDB/Git/webpack/Progressive Web App
-%   \item \textbf{关键词}: React/Vue.js/D3.js(SVG)/three.js(canvas, WebGL)/chrome extension/Express
-% \end{itemize}
-
-% \section{\faHeartO\ 项目/作品摘要}
-% \section{项目/作品摘要}
-% \datedline{\textit{An Integrated Version of Security Monitor Vis System}, https://hijiangtao.github.io/ss-vis-component/ }{}
-% \datedline{\textit{Dark-Tech}, https://github.com/hijiangtao/dark-tech/ }{}
-% \datedline{\textit{融合社交网络数据挖掘的电视节目可视化分析系统}, https://hijiangtao.github.io/variety-show-hot-spot-vis/}{}
-% \datedline{\textit{LeetCodeOJ Solutions}, https://github.com/hijiangtao/LeetCodeOJ}{}
-% \datedline{\textit{Info-Vis}, https://github.com/ISCAS-VIS/infovis-ucas}{}
-
-
-% \section{\faInfo\ 社会实践/其他}
-% \section{社区参与/实践其他}
-% % increase linespacing [parsep=0.5ex]
-% \begin{itemize}[parsep=0.2ex]
-%   \item 乐于参与开源社区讨论,\textbf{参与翻译 Vue.js, webpack, WebAssembly, Babel 文档，印记中文成员}
-%   \item 中国科学院大学2016秋季学期可视化与可视分析课程助教，\textit{http://vis.ios.ac.cn/infovis-ucas/}
-%   \item 未来论坛学生会成员、北理社联新闻信息中心主任、北理工软件学院学生会宣传部副部长(2012-2016)
-%   \item 2013-2015 北京市共青团“温暖衣冬”志愿者,第九届园博会志愿者,2014 FLL机器人世锦赛志愿者
-% \end{itemize}
-
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
 \end{document}
+
+% FlatTrajData 前后端数据传递
